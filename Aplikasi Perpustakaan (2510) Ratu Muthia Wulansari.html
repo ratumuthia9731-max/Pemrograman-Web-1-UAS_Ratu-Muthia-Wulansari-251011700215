@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi Perpustakaan (2510) </title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #16a085;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #1abc9c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #16a085;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #149174;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function validasi() {
+            var judul = document.getElementById("judul").value;
+            var peminjam = document.getElementById("peminjam").value;
+            var tanggal = document.getElementById("tanggal").value;
+
+            if (judul === "" || peminjam === "" || tanggal === "") {
+                alert("Semua data harus diisi!");
+                return false;
+            }
+
+            alert("Data peminjaman berhasil disimpan");
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Aplikasi Perpustakaan</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#transaksi">Peminjaman</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#login">Login</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- BERANDA -->
+    <section id="beranda">
+        <h2>Beranda</h2>
+        <p>
+            Aplikasi Perpustakaan digunakan untuk mencatat data peminjaman
+            buku secara sederhana dan rapi.
+        </p>
+
+        <h3>Langkah Menggunakan Aplikasi</h3>
+        <ol>
+            <li>Login ke aplikasi</li>
+            <li>Pilih menu Peminjaman</li>
+            <li>Isi data peminjaman buku</li>
+            <li>Simpan data</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <!-- TRANSAKSI PEMINJAMAN -->
+    <section id="transaksi">
+        <h2>Form Peminjaman Buku</h2>
+
+        <form onsubmit="return validasi()">
+            <label>Judul Buku</label>
+            <input type="text" id="judul">
+
+            <label>Nama Peminjam</label>
+            <input type="text" id="peminjam">
+
+            <label>Tanggal Pinjam</label>
+            <input type="date" id="tanggal">
+
+            <button type="submit">Simpan</button>
+        </form>
+
+        <h3>Daftar Peminjaman</h3>
+        <table>
+            <tr>
+                <th>Judul Buku</th>
+                <th>Peminjam</th>
+                <th>Tanggal Pinjam</th>
+            </tr>
+            <tr>
+                <td>Pemrograman Web</td>
+                <td>Andi</td>
+                <td>2026-01-05</td>
+            </tr>
+            <tr>
+                <td>Basis Data</td>
+                <td>Siti</td>
+                <td>2026-01-06</td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- PROFIL -->
+    <section id="profil">
+        <h2>Profil Aplikasi</h2>
+        <p>
+            Aplikasi Perpustakaan ini dibuat untuk membantu pengelolaan
+            peminjaman buku agar lebih mudah, cepat, dan terstruktur.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- LOGIN -->
+    <section id="login">
+        <h2>Login</h2>
+        <form>
+            <label>Username</label>
+            <input type="text">
+
+            <label>Password</label>
+            <input type="password">
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Aplikasi Perpustakaan</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi Simpan Pinjam (0215) </title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #2980b9;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #21618c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function validasi() {
+            var nama = document.getElementById("nama").value;
+            var jenis = document.getElementById("jenis").value;
+            var jumlah = document.getElementById("jumlah").value;
+
+            if (nama === "" || jenis === "" || jumlah === "") {
+                alert("Semua data harus diisi!");
+                return false;
+            }
+
+            alert("Data simpan pinjam berhasil disimpan");
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Aplikasi Simpan Pinjam</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#transaksi">Transaksi</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#login">Login</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- BERANDA -->
+    <section id="beranda">
+        <h2>Beranda</h2>
+        <p>
+            Aplikasi Simpan Pinjam digunakan untuk mencatat transaksi
+            simpanan dan pinjaman anggota secara sederhana.
+        </p>
+
+        <h3>Cara Menggunakan Aplikasi</h3>
+        <ol>
+            <li>Login ke aplikasi</li>
+            <li>Pilih menu Transaksi</li>
+            <li>Isi data simpan atau pinjam</li>
+            <li>Simpan transaksi</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <!-- TRANSAKSI -->
+    <section id="transaksi">
+        <h2>Form Transaksi Simpan Pinjam</h2>
+
+        <form onsubmit="return validasi()">
+            <label>Nama Anggota</label>
+            <input type="text" id="nama">
+
+            <label>Jenis Transaksi</label>
+            <select id="jenis">
+                <option value="">-- Pilih --</option>
+                <option value="Simpan">Simpan</option>
+                <option value="Pinjam">Pinjam</option>
+            </select>
+
+            <label>Jumlah (Rp)</label>
+            <input type="number" id="jumlah">
+
+            <button type="submit">Simpan</button>
+        </form>
+
+        <h3>Daftar Transaksi</h3>
+        <table>
+            <tr>
+                <th>Nama Anggota</th>
+                <th>Jenis</th>
+                <th>Jumlah</th>
+            </tr>
+            <tr>
+                <td>Budi</td>
+                <td>Simpan</td>
+                <td>500.000</td>
+            </tr>
+            <tr>
+                <td>Sari</td>
+                <td>Pinjam</td>
+                <td>1.000.000</td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- PROFIL -->
+    <section id="profil">
+        <h2>Profil Aplikasi</h2>
+        <p>
+            Aplikasi Simpan Pinjam ini dibuat untuk membantu pengelolaan
+            data simpanan dan pinjaman anggota secara mudah dan terstruktur.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- LOGIN -->
+    <section id="login">
+        <h2>Login</h2>
+        <form>
+            <label>Username</label>
+            <input type="text">
+
+            <label>Password</label>
+            <input type="password">
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Aplikasi Simpan Pinjam</p>
+</footer>
+
+</body>
+</html>
